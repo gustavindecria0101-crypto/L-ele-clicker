@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animações das canetas flutuantes */
+.pen-float {
+  font-size: 2rem;
+  opacity: 0.3;
+  animation: float-animation 8s infinite ease-in-out;
+}
+
+@keyframes float-animation {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-30px) rotate(10deg);
+  }
+  50% {
+    transform: translateY(-60px) rotate(-10deg);
+  }
+  75% {
+    transform: translateY(-30px) rotate(5deg);
+  }
+}
+
+/* Animação do botão de clique */
+.manoel-button {
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.manoel-button:hover {
+  box-shadow: 0 15px 50px rgba(30, 64, 175, 0.7) !important;
+}
+
+.manoel-button.clicked {
+  animation: pulse-click 0.3s ease;
+}
+
+@keyframes pulse-click {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Números flutuantes */
+@keyframes float-up {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-100px);
+  }
+}
+
+.floating-number {
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* Efeitos de brilho para conquistas */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(250, 204, 21, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.8);
+  }
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.8);
+}
+
+/* Efeitos de hover nos cards */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Animação de entrada */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in-up 0.5s ease-out;
+}
+
+/* Efeito de partículas ao clicar */
+@keyframes particle-burst {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx), var(--ty)) scale(0);
+  }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .manoel-button {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  
+  .pen-float {
+    font-size: 1.5rem;
+  }
+}
+
+/* Efeitos de neon para o tema azul */
+.neon-text {
+  text-shadow: 
+    0 0 5px rgba(59, 130, 246, 0.8),
+    0 0 10px rgba(59, 130, 246, 0.6),
+    0 0 15px rgba(59, 130, 246, 0.4),
+    0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+/* Gradiente animado para o prestígio */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.gradient-animated {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Pulse para botões importantes */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.8);
+  }
+}
+
+.pulse-button {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
